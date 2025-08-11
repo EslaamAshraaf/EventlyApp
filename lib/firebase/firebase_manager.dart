@@ -36,6 +36,11 @@ class FirebaseManager {
     return docRef.set(model);
   }
 
+  static Future<void> editEvent(TaskModel model) {
+    var docRef = getTasksCollection().doc(model.id);
+    return docRef.set(model);
+  }
+
   static Stream<QuerySnapshot<TaskModel>> getTasks(String category) {
     if (category == "All") {
       return getTasksCollection()

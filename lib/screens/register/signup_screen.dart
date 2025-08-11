@@ -16,7 +16,7 @@ class SignupScreen extends StatelessWidget {
   final useNameController = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
-  final mainColor = const Color(0xFF5669FF); // اللون الأساسي
+  final mainColor = const Color(0xFF5669FF);
 
   @override
   Widget build(BuildContext context) {

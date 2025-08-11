@@ -23,59 +23,61 @@ class IntroductionScreen extends StatelessWidget {
         centerTitle: true,
         title: Image.asset("assets/images/logo_h.png"),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset("assets/images/introduction.png", width: double.infinity),
-            SizedBox(height: 24.h),
-            Text(
-              "introduction_title".tr(),
-              style: GoogleFonts.inter(
-                fontWeight: FontWeight.bold,
-                fontSize: 20.sp,
-                color: highlightColor, // Headline color
-              ),
-            ),
-            SizedBox(height: 8.h),
-            Text(
-              "introduction_subtitle".tr(),
-              style: GoogleFonts.inter(
-                fontWeight: FontWeight.w500,
-                fontSize: 16.sp,
-                color: colorScheme.onBackground,
-              ),
-            ),
-            SizedBox(height: 24.h),
-            _buildLanguageSelector(context, highlightColor),
-            SizedBox(height: 16.h),
-            _buildThemeSelector(themeProvider, highlightColor),
-            SizedBox(height: 24.h),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, LoginScreen.routeName);
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: highlightColor, // Button color
-                  padding: EdgeInsets.symmetric(vertical: 16.h),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.r),
-                  ),
-                ),
-                child: Text(
-                  "intro_btn".tr(),
-                  style: GoogleFonts.inter(
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                  ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset("assets/images/introduction.png", width: double.infinity),
+              SizedBox(height: 24.h),
+              Text(
+                "introduction_title".tr(),
+                style: GoogleFonts.inter(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.sp,
+                  color: highlightColor, // Headline color
                 ),
               ),
-            ),
-          ],
+              SizedBox(height: 8.h),
+              Text(
+                "introduction_subtitle".tr(),
+                style: GoogleFonts.inter(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16.sp,
+                  color: colorScheme.onBackground,
+                ),
+              ),
+              SizedBox(height: 24.h),
+              _buildLanguageSelector(context, highlightColor),
+              SizedBox(height: 16.h),
+              _buildThemeSelector(themeProvider, highlightColor),
+              SizedBox(height: 24.h),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, LoginScreen.routeName);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: highlightColor, // Button color
+                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.r),
+                    ),
+                  ),
+                  child: Text(
+                    "intro_btn".tr(),
+                    style: GoogleFonts.inter(
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
